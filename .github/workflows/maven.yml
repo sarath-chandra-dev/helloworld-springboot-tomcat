@@ -52,7 +52,7 @@ jobs:
       run: docker push $IMAGE_URL
 
     - name: Update Cloud Run service
-      uses: google-github-actions/deploy-cloudrun@v1
+      uses: google-github-actions/deploy-cloudrun@v2
       with:
         service: poc-spring-boot-cloud-run # same as the app in the $IMAGE_URL. Trigger
         image: ${{ env.IMAGE_URL }}
