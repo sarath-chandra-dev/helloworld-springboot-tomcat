@@ -30,4 +30,4 @@ jobs:
         java-version: 11
     
     - name: Build with Maven
-      run: ./mvnw compile com.google.cloud.tools:jib-maven-plugin:2.4.0:build -Dimage=gcr.io/the-experience-270205/helloworld  
+      run: mvn compile com.google.cloud.tools:jib-maven-plugin:2.4.0:build -Dimage=gcr.io/the-experience-270205/helloworld  
