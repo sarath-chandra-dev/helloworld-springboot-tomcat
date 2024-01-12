@@ -45,4 +45,9 @@ jobs:
     
     - name: Build JAR
       run: mvn -B package --file pom.xml
+
+    - name: Docker Build
+      run: docker build -t $IMAGE_URL .
+    - name: Docker Push
+      run: docker push $IMAGE_URL
     
