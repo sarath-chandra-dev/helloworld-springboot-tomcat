@@ -36,6 +36,7 @@ class AppCdsApplicationListener implements ApplicationListener<ApplicationReadyE
   @Override
   public void onApplicationEvent(ApplicationReadyEvent event) {
     if (appcds) {
+      // Adding a test comment
       restTemplate.getForEntity("http://localhost:8080/", String.class);
       SpringApplication.exit(ctx, () -> 0);
     }
