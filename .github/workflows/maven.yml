@@ -26,15 +26,15 @@ jobs:
       uses: google-github-actions/auth@v1
       with:
         credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
+        export_environment_variables: true
 
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: the-experience-270205
     - name: Use gcloud CLI
       run: gcloud info # Not requred, but can give you hints in the workflow if something goes wrong 
     
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-
     - name: Configure docker
       run: gcloud auth configure-docker us.gcr.io
 
