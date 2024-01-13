@@ -36,7 +36,6 @@ jobs:
 
     - name: Deploy to Google Cloud Run
       run: |
-        gcloud services enable run.googleapis.com
         gcloud run deploy maven-app-service --image gcr.io/the-experience-270205/helloworld:${{ github.sha }} --region us-central1 --platform managed --allow-unauthenticated
         # us-central1 is closest to Michigan
 
